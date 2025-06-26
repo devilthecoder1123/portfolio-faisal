@@ -10,8 +10,6 @@ const Contact = () => {
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -19,21 +17,6 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
-
-    // In a real application, you would send the data to your backend here
-    alert("Thank you for your message! I'll get back to you soon.");
   };
 
   const contactInfo = [
@@ -178,7 +161,11 @@ const Contact = () => {
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <motion.form
+              action="https://formsubmit.co/freecourse1123@gmail.com"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid sm:grid-cols-2 gap-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -279,21 +266,14 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-600/50 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/25"
+                className="w-full flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/25"
               >
-                {isSubmitting ? (
-                  <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
-                ) : (
-                  <>
-                    <Send size={20} />
-                    <span>Send Message</span>
-                  </>
-                )}
+                <Send size={20} />
+                <span>Send Message</span>
               </motion.button>
-            </form>
+            </motion.form>
           </motion.div>
         </div>
       </div>
