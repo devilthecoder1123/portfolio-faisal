@@ -54,7 +54,7 @@ const Projects = () => {
         "A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, dark mode, and optimized performance.",
       image: `${PortfolioImage}`,
       technologies: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-      liveUrl: "#",
+      liveUrl: "https://faisalkhan1123-portfolio.netlify.app/",
       githubUrl: "https://github.com/devilthecoder1123/portfolio-faisal",
       featured: false,
     },
