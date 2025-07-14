@@ -1,67 +1,67 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Eye } from "lucide-react";
+import WeatherBotImage from "../assests/weatherbotimage.png";
+import ChatFlowBuilderImage from "../assests/chatbotflowImage.png";
+import PortfolioImage from "../assests/FaisalKhanPortfolio.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform built with React, TypeScript, and Stripe integration. Features include user authentication, product catalog, shopping cart, and payment processing.',
-      image: 'https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Node.js'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
+      title: "Weather Bot",
+      description:
+        "A modern, feature-rich Telegram bot with real-time weather updates and a powerful admin dashboard. Features include daily weather notifications, smart city recognition, user subscription management, and secure admin controls for user and API management.",
+
+      image: `${WeatherBotImage}`,
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Lucide React Icon",
+      ],
+      liveUrl: "https://weatherbotfk.netlify.app/",
+      githubUrl: "https://github.com/devilthecoder1123/WeatherBot",
+      featured: true,
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Redux', 'Socket.io', 'Express', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
+      title: "Chatbot Flow Builder",
+      description:
+        "A beautiful and extensible visual flow builder for designing chatbot conversations, built with React, TypeScript, and React Flow. Features include an intuitive drag-and-drop interface, smart connection validation, a dynamic settings panel, and a modular node architecture for easy extensibility.",
+      image: `${ChatFlowBuilderImage}`,
+      technologies: ["React", "TypeScript", "React Flow", "Tailwind CSS"],
+      liveUrl: "https://chatbotflowbuilderbitespeed.netlify.app/",
+      githubUrl: "https://github.com/devilthecoder1123/Chatbot-flow-builder",
+      featured: true,
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts, interactive charts, and responsive design. Features include 7-day forecasts and weather alerts.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS Grid'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      title: "IMDB clone",
+      description:
+        "Developed a movie browsing app that provides users with a seamless browsing experience. Designed the app to display movie data in an easy-to-understand format, with the ability to sort by popularity, rating, and release date.",
+      image:
+        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: [
+        "React.js",
+        "TMDB API",
+        "React-multi-carousel",
+        "Material UI",
+      ],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: false,
     },
     {
-      title: 'Social Media Dashboard',
-      description: 'Analytics dashboard for social media management with real-time metrics, post scheduling, and engagement tracking across multiple platforms.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'D3.js', 'GraphQL', 'PostgreSQL'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      title: "Portfolio Website",
+      description:
+        "A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, dark mode, and optimized performance.",
+      image: `${PortfolioImage}`,
+      technologies: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/devilthecoder1123/portfolio-faisal",
+      featured: false,
     },
-    {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Framer Motion. Features smooth animations, dark mode, and optimized performance.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      title: 'Cryptocurrency Tracker',
-      description: 'Real-time cryptocurrency tracking application with price alerts, portfolio management, and detailed market analysis.',
-      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript', 'CoinGecko API', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const featuredProjects = projects.filter((project) => project.featured);
+  const otherProjects = projects.filter((project) => !project.featured);
 
   return (
     <section id="projects" className="py-20 bg-gray-900">
@@ -121,11 +121,15 @@ const Projects = () => {
                   </motion.a>
                 </div>
               </div>
-              
+
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-                
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
                     <span
@@ -136,10 +140,11 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex space-x-4">
                   <motion.a
                     href={project.liveUrl}
+                    target="_blank"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center space-x-2 text-orange-400 hover:text-orange-300 transition-colors duration-300"
@@ -149,6 +154,7 @@ const Projects = () => {
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
+                    target="_blank"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300"
@@ -170,7 +176,9 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Other Projects</h3>
+          <h3 className="text-2xl font-bold text-white text-center mb-8">
+            Other Projects
+          </h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -185,10 +193,13 @@ const Projects = () => {
               className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-4">
-                <h4 className="text-lg font-semibold text-white">{project.title}</h4>
+                <h4 className="text-lg font-semibold text-white">
+                  {project.title}
+                </h4>
                 <div className="flex space-x-2">
                   <motion.a
                     href={project.liveUrl}
+                    target="_blank"
                     whileHover={{ scale: 1.1 }}
                     className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
                   >
@@ -196,6 +207,7 @@ const Projects = () => {
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
+                    target="_blank"
                     whileHover={{ scale: 1.1 }}
                     className="text-gray-400 hover:text-white transition-colors duration-300"
                   >
@@ -203,9 +215,11 @@ const Projects = () => {
                   </motion.a>
                 </div>
               </div>
-              
-              <p className="text-gray-300 text-sm mb-4 line-clamp-3">{project.description}</p>
-              
+
+              <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                {project.description}
+              </p>
+
               <div className="flex flex-wrap gap-2">
                 {project.technologies.slice(0, 3).map((tech, techIndex) => (
                   <span
