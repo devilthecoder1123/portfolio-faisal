@@ -3,6 +3,7 @@ import { ExternalLink, Github, Eye } from "lucide-react";
 import WeatherBotImage from "../assests/weatherbotimage.png";
 import ChatFlowBuilderImage from "../assests/chatbotflowImage.png";
 import PortfolioImage from "../assests/FaisalKhanPortfolio.png";
+import GeminiCloneImage from "../assests/GeminiClone.png";
 
 const Projects = () => {
   const projects = [
@@ -57,6 +58,16 @@ const Projects = () => {
       liveUrl: "https://faisalkhan1123-portfolio.netlify.app/",
       githubUrl: "https://github.com/devilthecoder1123/portfolio-faisal",
       featured: false,
+    },
+    {
+      title: "Gemini Frontend Clone",
+      description:
+        "A fully functional, responsive Gemini-style conversational AI UI built with React, Zustand, and Tailwind. Includes OTP auth, real-time simulated chat, chatroom management, dark mode, and mobile responsiveness.",
+      image: `${GeminiCloneImage}`,
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Zustand", "Vite"],
+      liveUrl: "https://gemini-ai-clonefk.netlify.app/",
+      githubUrl: "https://github.com/devilthecoder1123/gemini-ai-clone",
+      featured: true,
     },
   ];
 
