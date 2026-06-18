@@ -6,8 +6,42 @@ import ChatFlowBuilderImage from "../assests/chatbotflowImage.png";
 import GeminiCloneImage from "../assests/GeminiClone.png";
 import ImdbImage from "../assests/Imdb.png";
 import PortfolioImage from "../assests/FaisalPortfolio.png";
+import LumenImage from "../assests/Lumen.png";
 
 const projects = [
+  {
+    id: 6,
+    title: "Lumen",
+    subtitle: "AI Company Research Platform",
+    description:
+      "An AI research platform that generates source-grounded company reports — paste links, the server fetches and reads the real pages, then an LLM writes a structured overview where every claim ties back to a source (RAG). Features follow-up Q&A, live metrics with AI insights, shareable reports, and multi-tenant workspaces with role-based access.",
+    image: LumenImage,
+    technologies: [
+      "Next.js 14",
+      "TypeScript",
+      "Groq / OpenAI",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+    ],
+    liveUrl: "https://lumen-nine-olive.vercel.app/",
+    githubUrl: "https://github.com/devilthecoder1123/Lumen",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: 0,
+    title: "AudioVerse",
+    subtitle: "Full-Stack E-Commerce Audiobook Platform",
+    description:
+      "An end-to-end audiobook marketplace built with Next.js and TypeScript. Features secure authentication, payment integration, advanced search and filtering, a full product catalog, and cart functionality across fully responsive layouts.",
+    image: null,
+    technologies: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS"],
+    liveUrl: "https://audioverse.faisalkhan.dev",
+    githubUrl: "https://github.com/devilthecoder1123",
+    featured: true,
+    category: "Full-Stack",
+  },
   {
     id: 1,
     title: "Weather Bot",
@@ -32,7 +66,7 @@ const projects = [
     githubUrl: "https://github.com/devilthecoder1123/Chatbot-flow-builder",
     featured: true,
     subtitle: "Visual Bot Designer",
-    category: "Frontend",
+    category: "AI",
   },
   {
     id: 3,
@@ -44,7 +78,8 @@ const projects = [
     liveUrl: "https://gemini-ai-clonefk.netlify.app/",
     githubUrl: "https://github.com/devilthecoder1123/gemini-ai-clone",
     featured: true,
-    category: "Frontend",
+    subtitle: "Conversational AI App",
+    category: "AI",
   },
   {
     id: 4,
@@ -78,7 +113,7 @@ const projects = [
   },
 ];
 
-const categories = ["All", "Full-Stack", "Frontend"];
+const categories = ["All", "AI", "Full-Stack", "Frontend"];
 
 export function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -100,9 +135,8 @@ export function ProjectsSection() {
             Featured <span className="gradient-text">Work</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            A showcase of projects that demonstrate technical expertise,
-            creative problem-solving, and passion for building exceptional user
-            experiences.
+            Full-stack products and AI-powered apps I've built end-to-end — from
+            conversational interfaces and visual tools to e-commerce platforms.
           </p>
 
           {/* Category Filter */}
@@ -141,13 +175,17 @@ export function ProjectsSection() {
                   {/* Project Image */}
                   <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-8xl font-bold text-primary/20">
+                      {project.image ? (
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover"
                         />
-                      </div>
+                      ) : (
+                        <span className="text-5xl lg:text-6xl font-bold gradient-text px-6 text-center">
+                          {project.title}
+                        </span>
+                      )}
                     </div>
 
                     {/* Overlay */}
@@ -158,26 +196,30 @@ export function ProjectsSection() {
                           : "opacity-0"
                       }`}
                     >
-                      <Button variant="glass" size="lg" asChild>
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-5 h-5 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                      <Button variant="glass" size="lg" asChild>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Github className="w-5 h-5 mr-2" />
-                          Code
-                        </a>
-                      </Button>
+                      {project.liveUrl && project.liveUrl !== "#" && (
+                        <Button variant="glass" size="lg" asChild>
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-5 h-5 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                      {project.githubUrl && project.githubUrl !== "#" && (
+                        <Button variant="glass" size="lg" asChild>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="w-5 h-5 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
                     </div>
 
                     {/* Category Badge */}
@@ -219,9 +261,19 @@ export function ProjectsSection() {
 
                     {/* Actions */}
                     <div className="flex items-center justify-between">
-                      <Button variant="minimal" className="group">
-                        View Details
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <Button variant="minimal" className="group" asChild>
+                        <a
+                          href={
+                            project.liveUrl && project.liveUrl !== "#"
+                              ? project.liveUrl
+                              : project.githubUrl
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Project
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -290,24 +342,30 @@ export function ProjectsSection() {
 
                     <div className="flex items-center justify-between">
                       <div className="flex gap-2">
-                        <Button variant="ghost" size="sm" asChild>
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </Button>
-                        <Button variant="ghost" size="sm" asChild>
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github className="w-4 h-4" />
-                          </a>
-                        </Button>
+                        {project.liveUrl && project.liveUrl !== "#" && (
+                          <Button variant="ghost" size="sm" asChild>
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${project.title} live demo`}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        )}
+                        {project.githubUrl && project.githubUrl !== "#" && (
+                          <Button variant="ghost" size="sm" asChild>
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${project.title} source code`}
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>

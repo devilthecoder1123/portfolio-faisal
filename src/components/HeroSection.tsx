@@ -14,10 +14,10 @@ export function HeroSection() {
   const [currentWord, setCurrentWord] = useState(0);
 
   const words = [
-    "Frontend Engineer",
-    "React Developer",
-    "UI/UX Enthusiast",
-    "Problem Solver",
+    "Full-Stack Engineer",
+    "AI Product Builder",
+    "React & Next.js Developer",
+    "Real-Time Data & Dashboards",
   ];
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export function HeroSection() {
                 </h1>
 
                 {/* Animated Role */}
-                <div className="h-16 flex items-center">
+                <div className="min-h-16 flex items-center">
                   <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
                     <span className="inline-block transition-all duration-500 ease-in-out">
                       {words[currentWord]}
@@ -125,11 +125,21 @@ export function HeroSection() {
 
                 {/* Description */}
                 <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                  Crafting exceptional digital experiences with{" "}
-                  <span className="text-primary font-semibold">2.5 years</span>{" "}
-                  of expertise in modern web technologies. Passionate about
-                  creating beautiful, performant applications that solve
-                  real-world problems.
+                  I design and ship{" "}
+                  <span className="text-primary font-semibold">
+                    full-stack products
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-primary font-semibold">
+                    AI-powered experiences
+                  </span>{" "}
+                  end-to-end — from real-time analytics platforms for{" "}
+                  <span className="text-foreground font-medium">
+                    Netflix &amp; Sinch
+                  </span>{" "}
+                  to conversational AI apps. 3+ years across React, Next.js,
+                  Node.js, GraphQL, and real-time data — turning ideas into
+                  fast, polished products.
                 </p>
               </div>
 

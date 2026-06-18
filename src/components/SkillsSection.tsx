@@ -3,43 +3,136 @@ import {
   Monitor,
   Smartphone,
   Server,
-  Database,
+  BarChart3,
   Palette,
   Wrench,
+  Bot,
 } from "lucide-react";
 
 const skillCategories = [
+  {
+    category: "AI & Products",
+    icon: Bot,
+    color: "from-accent to-accent-glow",
+    skills: [
+      {
+        name: "LLM / Chatbot Integration",
+        level: 82,
+        description: "Wiring models into product flows",
+      },
+      {
+        name: "Conversational UI",
+        level: 85,
+        description: "Chat & assistant interfaces",
+      },
+      {
+        name: "Prompt Engineering",
+        level: 80,
+        description: "Reliable, structured outputs",
+      },
+      {
+        name: "Vercel AI SDK",
+        level: 78,
+        description: "Streaming AI app primitives",
+      },
+      {
+        name: "Product Engineering",
+        level: 85,
+        description: "Idea to shipped MVP",
+      },
+      {
+        name: "Real-Time Features",
+        level: 84,
+        description: "Live data & event-driven UX",
+      },
+    ],
+  },
   {
     category: "Frontend",
     icon: Monitor,
     color: "from-primary to-primary-glow",
     skills: [
-      { name: "React", level: 100, description: "Building interactive UIs" },
-      { name: "TypeScript", level: 100, description: "Type-safe development" },
+      { name: "React.js", level: 95, description: "Building interactive UIs" },
       {
         name: "Next.js",
-        level: 100,
-        description: "Full-stack React framework",
+        level: 92,
+        description: "SSR / SSG React framework",
+      },
+      { name: "TypeScript", level: 92, description: "Type-safe development" },
+      { name: "JavaScript", level: 95, description: "Modern ES6+ features" },
+      { name: "Redux", level: 85, description: "Predictable state container" },
+      {
+        name: "Zustand",
+        level: 88,
+        description: "Lightweight state management",
+      },
+      {
+        name: "React Query",
+        level: 88,
+        description: "Server-state & data fetching",
       },
       {
         name: "Tailwind CSS",
-        level: 100,
+        level: 95,
         description: "Utility-first styling",
       },
-      { name: "Material-UI", level: 100, description: "React UI framework" },
-      { name: "JavaScript", level: 100, description: "Modern ES6+ features" },
+      { name: "Material UI", level: 88, description: "React component library" },
       {
-        name: "HTML/CSS",
-        level: 100,
+        name: "HTML5 / CSS3",
+        level: 95,
         description: "Semantic markup & styling",
       },
+    ],
+  },
+  {
+    category: "Backend & APIs",
+    icon: Server,
+    color: "from-primary to-accent",
+    skills: [
+      { name: "Node.js", level: 85, description: "Server-side JavaScript" },
+      { name: "Express.js", level: 84, description: "Web framework for Node" },
+      { name: "tRPC", level: 86, description: "End-to-end typesafe APIs" },
+      { name: "GraphQL", level: 82, description: "Query language & runtime" },
+      { name: "REST APIs", level: 90, description: "RESTful services" },
       {
-        name: "Zustand",
+        name: "BFF Architecture",
         level: 85,
-        description: "Lightweight state management",
+        description: "Backend-for-Frontend layer",
       },
-      { name: "React Router", level: 100, description: "Declarative routing" },
-      { name: "Axios", level: 100, description: "HTTP client for requests" },
+      {
+        name: "PostgreSQL / SQL",
+        level: 80,
+        description: "Relational databases",
+      },
+      { name: "MongoDB", level: 76, description: "NoSQL database" },
+      { name: "Auth (JWT/OAuth)", level: 88, description: "Auth & RBAC" },
+    ],
+  },
+  {
+    category: "Data & Streaming",
+    icon: BarChart3,
+    color: "from-accent to-primary",
+    skills: [
+      {
+        name: "Apache Kafka",
+        level: 80,
+        description: "Real-time event streaming",
+      },
+      {
+        name: "Apache Druid",
+        level: 78,
+        description: "Real-time analytics database",
+      },
+      {
+        name: "Apache Superset",
+        level: 85,
+        description: "BI & dashboard platform",
+      },
+      {
+        name: "Contentful CMS",
+        level: 88,
+        description: "Headless CMS & LMS / SCORM",
+      },
     ],
   },
   {
@@ -53,86 +146,70 @@ const skillCategories = [
         description: "Mobile-first approach",
       },
       {
-        name: "PWA Development",
-        level: 80,
-        description: "Progressive web apps",
+        name: "SSR / SSG",
+        level: 88,
+        description: "Server & static rendering",
       },
-      { name: "React Native", level: 70, description: "Cross-platform mobile" },
+      { name: "React Native", level: 72, description: "Cross-platform mobile" },
       {
-        name: "CSS Grid/Flexbox",
+        name: "CSS Grid / Flexbox",
         level: 95,
         description: "Modern layout systems",
       },
       {
         name: "Web Performance",
-        level: 100,
-        description: "Optimization techniques",
+        level: 90,
+        description: "Code splitting & lazy loading",
       },
-      { name: "Accessibility", level: 85, description: "WCAG compliance" },
-    ],
-  },
-  {
-    category: "Backend & APIs",
-    icon: Server,
-    color: "from-primary to-accent",
-    skills: [
-      { name: "Node.js", level: 75, description: "Server-side JavaScript" },
-      { name: "REST APIs", level: 85, description: "RESTful services" },
-      { name: "GraphQL", level: 70, description: "Query language & runtime" },
-      { name: "Express.js", level: 80, description: "Web framework for Node" },
-      { name: "Authentication", level: 100, description: "JWT & OAuth" },
       {
-        name: "Serverless",
-        level: 70,
-        description: "Function-based architecture",
+        name: "Accessibility",
+        level: 85,
+        description: "WCAG compliance",
       },
     ],
   },
   {
-    category: "Database & Storage",
-    icon: Database,
-    color: "from-accent to-primary",
+    category: "Testing & DevOps",
+    icon: Wrench,
+    color: "from-primary to-primary-glow",
     skills: [
-      { name: "PostgreSQL", level: 70, description: "Relational database" },
-      { name: "MongoDB", level: 65, description: "NoSQL database" },
-      { name: "Firebase", level: 80, description: "Backend-as-a-Service" },
-      { name: "Supabase", level: 75, description: "Open source Firebase alt" },
-      { name: "Prisma", level: 70, description: "Next-gen ORM" },
+      { name: "Jest", level: 88, description: "JavaScript testing" },
+      {
+        name: "React Testing Library",
+        level: 85,
+        description: "Component testing",
+      },
+      { name: "Vitest", level: 82, description: "Vite-native unit testing" },
+      {
+        name: "Lighthouse / Web Vitals",
+        level: 85,
+        description: "Performance auditing",
+      },
+      { name: "Webpack / Vite", level: 86, description: "Module bundling" },
+      { name: "Docker", level: 72, description: "Containerization" },
+      { name: "Git & CI/CD", level: 90, description: "Version control & pipelines" },
     ],
   },
   {
     category: "Design & UX",
     icon: Palette,
-    color: "from-primary to-primary-glow",
+    color: "from-accent to-accent-glow",
     skills: [
-      { name: "Figma", level: 100, description: "Design & prototyping" },
-      { name: "Framer Motion", level: 50, description: "Animation library" },
-      { name: "UI/UX Design", level: 100, description: "User-centered design" },
+      { name: "Figma", level: 88, description: "Design & prototyping" },
       {
         name: "Design Systems",
         level: 90,
-        description: "Consistent component libs",
+        description: "Hawkins, MUI, component libs",
       },
+      { name: "UI/UX Design", level: 85, description: "User-centered design" },
+      { name: "Framer Motion", level: 70, description: "Animation library" },
       { name: "Prototyping", level: 80, description: "Interactive mockups" },
-    ],
-  },
-  {
-    category: "Tools & DevOps",
-    icon: Wrench,
-    color: "from-accent to-accent-glow",
-    skills: [
-      { name: "Git", level: 90, description: "Version control" },
-      { name: "Docker", level: 65, description: "Containerization" },
-      { name: "Webpack", level: 80, description: "Module bundling" },
-      { name: "Jest", level: 85, description: "JavaScript testing" },
-      { name: "CI/CD", level: 75, description: "Continuous integration" },
-      { name: "AWS", level: 65, description: "Cloud services" },
     ],
   },
 ];
 
 export function SkillsSection() {
-  const [selectedCategory, setSelectedCategory] = useState("Frontend");
+  const [selectedCategory, setSelectedCategory] = useState("AI & Products");
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   const currentCategory = skillCategories.find(
@@ -147,8 +224,8 @@ export function SkillsSection() {
             Technical <span className="gradient-text">Arsenal</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A diverse skill set honed through continuous learning and real-world
-            application
+            A full-stack toolkit for building AI-powered products — from models
+            and data to backend, frontend, and design
           </p>
         </div>
 
@@ -249,18 +326,20 @@ export function SkillsSection() {
           <h3 className="text-2xl font-bold mb-8">Additional Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {[
-              "Sass",
-              "Styled Components",
-              "Material-UI",
-              "Zustand",
+              "SCORM",
+              "RBAC",
+              "WCAG Accessibility",
               "React Router",
               "Axios",
+              "Webpack",
               "ESLint",
               "Prettier",
               "Vite",
               "Vercel",
               "Netlify",
-              "Posthog",
+              "Agile / Scrum",
+              "SOLID",
+              "Clean Code",
             ].map((tech, index) => (
               <span
                 key={tech}
