@@ -7,6 +7,7 @@ import GeminiCloneImage from "../assests/GeminiClone.png";
 import ImdbImage from "../assests/Imdb.png";
 import PortfolioImage from "../assests/FaisalPortfolio.png";
 import LumenImage from "../assests/Lumen.png";
+import InventoryImage from "../assests/InventoryManagement.png";
 
 const projects = [
   {
@@ -28,6 +29,28 @@ const projects = [
     githubUrl: "https://github.com/devilthecoder1123/Lumen",
     featured: true,
     category: "AI",
+  },
+  {
+    id: 7,
+    title: "Inventory Management System",
+    subtitle: "Full-Stack Operations Platform",
+    description:
+      "A production-grade inventory platform for operators — product, category, and supplier management with a full stock-movement ledger (IN/OUT/ADJUSTMENT) backed by atomic transactions. Includes a dashboard with asset valuation and low-stock alerts, JWT auth with Admin/Staff role-based access, and a typed REST API. Separate React frontend and Node/Express + PostgreSQL backend repos.",
+    image: InventoryImage,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "JWT",
+      "React Query",
+    ],
+    liveUrl: "https://inventory-management-frontend-psi.vercel.app/login",
+    githubUrl: "https://github.com/devilthecoder1123/inventory-management-frontend",
+    featured: true,
+    category: "Full-Stack",
   },
   {
     id: 0,
